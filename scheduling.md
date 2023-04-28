@@ -37,7 +37,7 @@ Node affinity is used to restrict a pod to certain nodes.
 
 Node Selector: To select a particular node for a pod.
 
-    so, under spec section, add nodeSelector and the label by which the selection is done.
+so, under spec section, add nodeSelector and the label by which the selection is done.
 
     nodeSelector:
         size: Large
@@ -131,7 +131,7 @@ Add resources under containers in pod spec.
             memory: "2Gi"
             cpu: 2
 
-DaemonSet: on pod per node. Ex: kube-proxy or any monitoring application
+DaemonSet: one pod per node. Ex: kube-proxy or any monitoring application
 
     apiVersion: apps/v1
     kind: DaemonSet
@@ -169,7 +169,15 @@ the path for static manifest files is passed as option in --pod-manifest-path=/e
 To check for the path for manifests in any node, ssh into the node
     ssh node1
 
-then check for 
+then check for kubelet under processes
+
+    ps -ef | grep -i kubelet
+
+Identify the path of the manifests folder. There, you can create new manifests files or delete existing ones.  The kubelet then creates or deletes static pods based on that.
+
+Multiple Schedulers
+
+
 
 
 
