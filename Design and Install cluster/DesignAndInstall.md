@@ -1,5 +1,5 @@
 
-Through Leader elect process, one of the controller mamanger gains lock on the controller manager endpoint. SO that they dont run in parallel.
+Through Leader elect process, one of the controller manager gains lock on the controller manager endpoint. So that they dont run in parallel.
 
 ![](2023-05-26-16-32-34.png)
 
